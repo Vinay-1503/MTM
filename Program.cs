@@ -67,12 +67,48 @@ void AddTask()
         return;
     }
 
-    var task = taskService.AddTask(title);
-    Console.WriteLine($"Task added successfully! (Id: {task.Id})");
+    // Priority input
+    Console.WriteLine("\nSelect Priority:");
+    Console.WriteLine("1. Low");
+    Console.WriteLine("2. Medium");
+    Console.WriteLine("3. High");
+    Console.Write("Enter choice (1-3, default 2): ");
+    string? priorityInput = Console.ReadLine();
+
+    TaskPriority priority = TaskPriority.Medium; // default
+
+    if (int.TryParse(priorityInput, out int pChoice))
+    {
+        if (Enum.IsDefined(typeof(TaskPriority), pChoice))
+        {
+            priority = (TaskPriority)pChoice;
+        }
+    }
+
+    // Due date input
+    Console.Write("\nEnter due date (yyyy-MM-dd) or press Enter to skip: ");
+    string? dueDateInput = Console.ReadLine();
+
+    DateTime? dueDate = null;
+
+    if (!string.IsNullOrWhiteSpace(dueDateInput))
+    {
+        if (DateTime.TryParse(dueDateInput, out DateTime parsedDate))
+        {
+            dueDate = parsedDate;
+        }
+        else
+        {
+            Console.WriteLine("Invalid date format. Due date will be ignored.");
+        }
+    }
+
+    var task = taskService.AddTask(title, priority, dueDate);
+
+    Console.WriteLine($"\nTask added successfully! (Id: {task.Id})");
     Console.WriteLine("Press any key to continue...");
     Console.ReadKey();
 }
-
 void ViewTasks()
 {
     Console.Clear();
@@ -89,13 +125,21 @@ void ViewTasks()
         foreach (var task in tasks)
         {
             string status = task.IsCompleted ? "[Done]" : "[Pending]";
+            string dueText = task.DueDate.HasValue
+                ? task.DueDate.Value.ToString("yyyy-MM-dd")
+                : "No due date";
+
             Console.WriteLine($"{task.Id}. {status} {task.Title}");
+            Console.WriteLine($"    Priority: {task.Priority} | Due: {dueText}");
         }
     }
 
     Console.WriteLine("\nPress any key to go back to menu...");
     Console.ReadKey();
 }
+
+
+
 
 void MarkTaskCompleted()
 {
@@ -182,6 +226,11 @@ void ViewTasksInline()
     foreach (var task in tasks)
     {
         string status = task.IsCompleted ? "[Done]" : "[Pending]";
-        Console.WriteLine($"{task.Id}. {status} {task.Title}");
+        string dueText = task.DueDate.HasValue
+            ? task.DueDate.Value.ToString("yyyy-MM-dd")
+            : "No due date";
+
+        Console.WriteLine($"{task.Id}. {status} {task.Title} | Priority: {task.Priority} | Due: {dueText}");
     }
 }
+

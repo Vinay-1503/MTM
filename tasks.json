@@ -2,21 +2,36 @@
   {
     "Id": 1,
     "Title": "c#",
-    "IsCompleted": false
+    "IsCompleted": false,
+    "Priority": 0,
+    "DueDate": null
   },
   {
     "Id": 2,
     "Title": "dotnet",
-    "IsCompleted": false
+    "IsCompleted": false,
+    "Priority": 0,
+    "DueDate": null
   },
   {
     "Id": 3,
     "Title": "java",
-    "IsCompleted": true
+    "IsCompleted": true,
+    "Priority": 0,
+    "DueDate": null
   },
   {
     "Id": 4,
     "Title": "python",
-    "IsCompleted": true
+    "IsCompleted": true,
+    "Priority": 0,
+    "DueDate": null
+  },
+  {
+    "Id": 5,
+    "Title": "golang",
+    "IsCompleted": false,
+    "Priority": 2,
+    "DueDate": "2025-12-29T00:00:00"
   }
 ]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MiniTaskManager.App.Storage;
@@ -14,7 +15,10 @@ namespace MiniTaskManager.App.Services
         {
             _storage = storage;
 
-            _tasks = _storage.LoadTasks();
+            // Load tasks from storage
+            _tasks = _storage.LoadTasks() ?? new List<TaskItem>();
+
+            // Set next Id based on existing tasks
             _nextId = _tasks.Any() ? _tasks.Max(t => t.Id) + 1 : 1;
         }
 
@@ -28,13 +32,15 @@ namespace MiniTaskManager.App.Services
             return _tasks.FirstOrDefault(t => t.Id == id);
         }
 
-        public TaskItem AddTask(string title)
+        public TaskItem AddTask(string title, TaskPriority priority, DateTime? dueDate)
         {
             var task = new TaskItem
             {
                 Id = _nextId++,
                 Title = title,
-                IsCompleted = false
+                IsCompleted = false,
+                Priority = priority,
+                DueDate = dueDate
             };
 
             _tasks.Add(task);
