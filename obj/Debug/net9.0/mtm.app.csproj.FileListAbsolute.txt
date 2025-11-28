@@ -26,3 +26,4 @@ E:\Mtm\MiniTaskManager.app\bin\Debug\net9.0\mtm.app.dll
 E:\Mtm\MiniTaskManager.app\bin\Debug\net9.0\mtm.app.pdb
 E:\Mtm\MiniTaskManager.app\obj\Debug\net9.0\mtm.app.genruntimeconfig.cache
 E:\Mtm\MiniTaskManager.app\obj\Debug\net9.0\ref\mtm.app.dll
+E:\Mtm\MiniTaskManager.app\obj\Debug\net9.0\mtm.app.sourcelink.json
