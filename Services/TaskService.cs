@@ -15,12 +15,14 @@ namespace MiniTaskManager.App.Services
         {
             _storage = storage;
 
-            // Load tasks from storage
+            // Load existing tasks OR start fresh
             _tasks = _storage.LoadTasks() ?? new List<TaskItem>();
 
-            // Set next Id based on existing tasks
+            // Maintain incremental ID
             _nextId = _tasks.Any() ? _tasks.Max(t => t.Id) + 1 : 1;
         }
+
+        // ========================= CRUD ========================= //
 
         public IReadOnlyList<TaskItem> GetAllTasks()
         {
@@ -52,9 +54,7 @@ namespace MiniTaskManager.App.Services
         {
             var task = GetTaskById(id);
             if (task == null || task.IsCompleted)
-            {
                 return false;
-            }
 
             task.IsCompleted = true;
             Save();
@@ -65,9 +65,7 @@ namespace MiniTaskManager.App.Services
         {
             var task = GetTaskById(id);
             if (task == null)
-            {
                 return false;
-            }
 
             _tasks.Remove(task);
             Save();
@@ -78,6 +76,27 @@ namespace MiniTaskManager.App.Services
         {
             return _tasks.Count > 0;
         }
+
+
+        // ========================= FILTERING ========================= //
+
+        public IReadOnlyList<TaskItem> GetPendingTasks()
+        {
+            return _tasks.Where(t => !t.IsCompleted).ToList();
+        }
+
+        public IReadOnlyList<TaskItem> GetCompletedTasks()
+        {
+            return _tasks.Where(t => t.IsCompleted).ToList();
+        }
+
+        public IReadOnlyList<TaskItem> GetTasksByPriority(TaskPriority priority)
+        {
+            return _tasks.Where(t => t.Priority == priority).ToList();
+        }
+
+
+        // ========================= SAVE to JSON ========================= //
 
         private void Save()
         {

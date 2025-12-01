@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mtm.app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd750c794e0b463bc5aead9f7cbeee7c65fc759e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a52bc5ea299ffc45814c65a38416431f7804106c")]
 [assembly: System.Reflection.AssemblyProductAttribute("mtm.app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mtm.app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

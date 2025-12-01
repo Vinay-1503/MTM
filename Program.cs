@@ -11,14 +11,17 @@ TaskService taskService = new TaskService(storage);
 
 while (true)
 {
-    Console.Clear();
     Console.WriteLine("==== Mini Task Manager ====");
     Console.WriteLine("1. Add Task");
-    Console.WriteLine("2. View Tasks");
-    Console.WriteLine("3. Mark Task as Completed");
-    Console.WriteLine("4. Delete Task");
-    Console.WriteLine("5. Exit");
+    Console.WriteLine("2. View All Tasks");
+    Console.WriteLine("3. View Pending Tasks");
+    Console.WriteLine("4. View Completed Tasks");
+    Console.WriteLine("5. View High Priority Tasks");
+    Console.WriteLine("6. Mark Task as Completed");
+    Console.WriteLine("7. Delete Task");
+    Console.WriteLine("8. Exit");
     Console.Write("Enter your choice: ");
+
 
     string? input = Console.ReadLine();
 
@@ -31,26 +34,36 @@ while (true)
 
     switch (choice)
     {
-        case 1:
-            AddTask();
-            break;
-        case 2:
-            ViewTasks();
-            break;
-        case 3:
-            MarkTaskCompleted();
-            break;
-        case 4:
-            DeleteTask();
-            break;
-        case 5:
-            Console.WriteLine("Goodbye!");
-            return;
-        default:
-            Console.WriteLine("Invalid choice. Press any key to continue...");
-            Console.ReadKey();
-            break;
+    case 1:
+        AddTask();
+        break;
+    case 2:
+        ViewAllTasks();
+        break;
+    case 3:
+        ViewPendingTasks();
+        break;
+    case 4:
+        ViewCompletedTasks();
+        break;
+    case 5:
+        ViewHighPriorityTasks();
+        break;
+    case 6:
+        MarkTaskCompleted();
+        break;
+    case 7:
+        DeleteTask();
+        break;
+    case 8:
+        Console.WriteLine("Goodbye!");
+        return;
+    default:
+        Console.WriteLine("Invalid choice. Press any key to continue...");
+        Console.ReadKey();
+        break;
     }
+
 }
 
 void AddTask()
@@ -109,7 +122,7 @@ void AddTask()
     Console.WriteLine("Press any key to continue...");
     Console.ReadKey();
 }
-void ViewTasks()
+void ViewAllTasks()
 {
     Console.Clear();
     Console.WriteLine("==== Your Tasks ====");
@@ -119,6 +132,90 @@ void ViewTasks()
     if (!tasks.Any())
     {
         Console.WriteLine("No tasks found.");
+    }
+    else
+    {
+        foreach (var task in tasks)
+        {
+            string status = task.IsCompleted ? "[Done]" : "[Pending]";
+            string dueText = task.DueDate.HasValue
+                ? task.DueDate.Value.ToString("yyyy-MM-dd")
+                : "No due date";
+
+            Console.WriteLine($"{task.Id}. {status} {task.Title}");
+            Console.WriteLine($"    Priority: {task.Priority} | Due: {dueText}");
+        }
+    }
+
+    Console.WriteLine("\nPress any key to go back to menu...");
+    Console.ReadKey();
+}
+void ViewPendingTasks()
+{
+    Console.Clear();
+    Console.WriteLine("==== Pending Tasks ====");
+
+    var tasks = taskService.GetPendingTasks();
+
+    if (!tasks.Any())
+    {
+        Console.WriteLine("No pending tasks.");
+    }
+    else
+    {
+        foreach (var task in tasks)
+        {
+            string dueText = task.DueDate.HasValue
+                ? task.DueDate.Value.ToString("yyyy-MM-dd")
+                : "No due date";
+
+            Console.WriteLine($"{task.Id}. [Pending] {task.Title}");
+            Console.WriteLine($"    Priority: {task.Priority} | Due: {dueText}");
+        }
+    }
+
+    Console.WriteLine("\nPress any key to go back to menu...");
+    Console.ReadKey();
+}
+
+void ViewCompletedTasks()
+{
+    Console.Clear();
+    Console.WriteLine("==== Completed Tasks ====");
+
+    var tasks = taskService.GetCompletedTasks();
+
+    if (!tasks.Any())
+    {
+        Console.WriteLine("No completed tasks.");
+    }
+    else
+    {
+        foreach (var task in tasks)
+        {
+            string dueText = task.DueDate.HasValue
+                ? task.DueDate.Value.ToString("yyyy-MM-dd")
+                : "No due date";
+
+            Console.WriteLine($"{task.Id}. [Done] {task.Title}");
+            Console.WriteLine($"    Priority: {task.Priority} | Due: {dueText}");
+        }
+    }
+
+    Console.WriteLine("\nPress any key to go back to menu...");
+    Console.ReadKey();
+}
+
+void ViewHighPriorityTasks()
+{
+    Console.Clear();
+    Console.WriteLine("==== High Priority Tasks ====");
+
+    var tasks = taskService.GetTasksByPriority(TaskPriority.High);
+
+    if (!tasks.Any())
+    {
+        Console.WriteLine("No high priority tasks.");
     }
     else
     {
