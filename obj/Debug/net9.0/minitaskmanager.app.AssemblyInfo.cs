@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("minitaskmanager.app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5098201b66a2adcc321cfeb189b2c5e4b068bbb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+069f55dabfc3c9f6fd2e9770114418d70f6f2359")]
 [assembly: System.Reflection.AssemblyProductAttribute("minitaskmanager.app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("minitaskmanager.app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
