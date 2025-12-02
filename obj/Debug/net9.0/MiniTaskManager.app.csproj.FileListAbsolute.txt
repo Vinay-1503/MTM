@@ -1,0 +1,15 @@
+E:\Mtm\minitaskmanager.app\bin\Debug\net9.0\minitaskmanager.app.exe
+E:\Mtm\minitaskmanager.app\bin\Debug\net9.0\minitaskmanager.app.deps.json
+E:\Mtm\minitaskmanager.app\bin\Debug\net9.0\minitaskmanager.app.runtimeconfig.json
+E:\Mtm\minitaskmanager.app\bin\Debug\net9.0\minitaskmanager.app.dll
+E:\Mtm\minitaskmanager.app\bin\Debug\net9.0\minitaskmanager.app.pdb
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.AssemblyInfoInputs.cache
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.AssemblyInfo.cs
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.csproj.CoreCompileInputs.cache
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.sourcelink.json
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.dll
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\refint\minitaskmanager.app.dll
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.pdb
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\minitaskmanager.app.genruntimeconfig.cache
+E:\Mtm\minitaskmanager.app\obj\Debug\net9.0\ref\minitaskmanager.app.dll

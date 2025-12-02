@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Mtm\\MiniTaskManager.App\\mtm.app.csproj",
-      "projectName": "mtm.app",
-      "projectPath": "E:\\Mtm\\MiniTaskManager.App\\mtm.app.csproj",
+      "projectUniqueName": "E:\\Mtm\\minitaskmanager.app\\MiniTaskManager.app.csproj",
+      "projectName": "MiniTaskManager.app",
+      "projectPath": "E:\\Mtm\\minitaskmanager.app\\MiniTaskManager.app.csproj",
       "packagesPath": "C:\\Users\\Vinay\\.nuget\\packages\\",
-      "outputPath": "E:\\Mtm\\MiniTaskManager.App\\obj\\",
+      "outputPath": "E:\\Mtm\\minitaskmanager.app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
