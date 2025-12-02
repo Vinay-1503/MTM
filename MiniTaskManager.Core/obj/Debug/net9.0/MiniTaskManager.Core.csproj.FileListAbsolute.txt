@@ -1,0 +1,11 @@
+E:\Mtm\MiniTaskManager.Core\bin\Debug\net9.0\MiniTaskManager.Core.deps.json
+E:\Mtm\MiniTaskManager.Core\bin\Debug\net9.0\MiniTaskManager.Core.dll
+E:\Mtm\MiniTaskManager.Core\bin\Debug\net9.0\MiniTaskManager.Core.pdb
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.AssemblyInfoInputs.cache
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.AssemblyInfo.cs
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.csproj.CoreCompileInputs.cache
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.dll
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\refint\MiniTaskManager.Core.dll
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\MiniTaskManager.Core.pdb
+E:\Mtm\MiniTaskManager.Core\obj\Debug\net9.0\ref\MiniTaskManager.Core.dll

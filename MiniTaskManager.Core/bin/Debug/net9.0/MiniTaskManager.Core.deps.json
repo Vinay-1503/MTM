@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MiniTaskManager.Core/1.0.0": {
+        "runtime": {
+          "MiniTaskManager.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MiniTaskManager.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
